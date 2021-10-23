@@ -6,72 +6,75 @@
 
 <link href="@Url.Content("~/Content/Style.css")" rel="stylesheet" type="text/css" />
 
-   
-        <h2>List of the Users</h2>
 
-        <p>
-            @Html.ActionLink("Create New", "Create")
+<h2>List of the Users</h2>
 
-            @Html.ActionLink("Logout", "Login", "Home")
-        </p>
-        <table class="table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.AccountNumber)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.UserName)
-                </th>
-                @*<th>
-                        @Html.DisplayNameFor(model => model.AadharNo)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.EmailId)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.PAN)
-                    </th>*@
-                <th>
-                    @Html.DisplayNameFor(model => model.Balance)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.DOB)
-                </th>
-                <th></th>
-            </tr>
+<p>
+    @Html.ActionLink("Create New", "Create")
 
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.AccountNumber)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.UserName)
-                    </td>
-                    @*<td>
-                            @Html.DisplayFor(modelItem => item.AadharNo)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.EmailId)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.PAN)
-                        </td>*@
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Balance)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.DOB)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Withdraw", "Withdraw", new { id = item.Id }) |
-                        @Html.ActionLink("Deposit", "Deposit", new { id = item.Id }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                    </td>
-                </tr>
-            }
 
-        </table>
-      
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AccountNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.AadharNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PAN)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Balance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOB)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.AadharNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmailId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PAN)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Balance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DOB)
+            </td>
+            <td>
+                @Html.ActionLink("Withdraw", "Withdraw", new { id = item.Id }) |
+                @Html.ActionLink("Deposit", "Deposit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+
+</table>
+<button class="btn btn-success">@Html.ActionLink("Logout", "Login", "Home")</button>
+
+
